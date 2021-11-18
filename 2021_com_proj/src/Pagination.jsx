@@ -12,10 +12,10 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
       <ul className='pagination'>
         {pageNumbers.map(number => (
           <li key={number} className='page-item'>
-             {/*링크 추가=> 페이징하면 새로고침되더라구여*/}
-              <a onClick={() => paginate(number)} href='!#' className='page-link'>
-                {number}
-              </a>
+            {/*링크 추가=> 페이징하면 새로고침되더라구여*/}
+            <a onClick={() => paginate(number)} className='page-link'>
+              {number}
+            </a>
           </li>
         ))}
       </ul>

@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import firebase from "firebase/app";
 import "firebase/firestore";
+// 라우팅 추가
+import { BrowserRouter } from 'react-router-dom';
 
 var firebaseConfig = {
   apiKey: "AIzaSyAL0HSLG5hUdu49H742LauKt6ywfLc-mcM",
@@ -14,12 +16,11 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 export const db = firebase.firestore();
-
-console.log(firebase);
-
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
