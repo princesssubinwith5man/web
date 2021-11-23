@@ -1,7 +1,7 @@
 import React from "react";
 import './App.css'
 
-function Table({ table_data }) {
+function Table({ table_data,setmapOn }) {
 
     return (
         <>
@@ -16,7 +16,7 @@ function Table({ table_data }) {
             </thead>
             <tbody>
                 {table_data.map((document, index) => (
-                    <tr key={index}>
+                    <tr key={index} onClick ={()=>setmapOn(1)}>
                         <td>{document.name}</td>
                         <td>{document.address}</td>
                         <td>{document.like}</td>

@@ -5,12 +5,15 @@ import Pagination from './Pagination';
 import { db } from './index.js'
 import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import Nmap from './NaverMap.js'
 
 function Food_Info(props) {
   let [catagori, setCatagori] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);
   let { id } = useParams();
+  let [mapOn,setmapOn]= useState(0);
+
 
   useEffect(() => {
     //sector 값만 바꿔서 돌리면 분류되서 쭈르륵 뜹니다. 테이블, 페이지먼트 안건드려도 됩니둥
@@ -37,7 +40,13 @@ function Food_Info(props) {
 
   return (
     <Container>
-      <Table table_data={currentPosts} />
+      {
+        mapOn == 1 
+        ? <Nmap />
+        : null
+
+      }
+      <Table table_data={currentPosts} mapOn ={mapOn} setmapOn={setmapOn}/>
       <Pagination postsPerPage={postsPerPage} totalPosts={catagori.length} paginate={paginate} />
       <br />
 
@@ -46,4 +55,6 @@ function Food_Info(props) {
   )
 
 }
+
+
 export default Food_Info;
