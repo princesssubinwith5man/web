@@ -5,14 +5,12 @@ import Pagination from './Pagination';
 import { db } from './index.js'
 import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
-import Nmap from './NaverMap.js'
 
 function Food_Info(props) {
   let [catagori, setCatagori] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);
   let { id } = useParams();
-  let [mapOn,setmapOn]= useState(0);
 
 
   useEffect(() => {
@@ -40,13 +38,8 @@ function Food_Info(props) {
 
   return (
     <Container>
-      {
-        mapOn == 1 
-        ? <Nmap />
-        : null
-
-      }
-      <Table table_data={currentPosts} mapOn ={mapOn} setmapOn={setmapOn}/>
+      
+      <Table table_data={currentPosts}/>
       <Pagination postsPerPage={postsPerPage} totalPosts={catagori.length} paginate={paginate} />
       <br />
 

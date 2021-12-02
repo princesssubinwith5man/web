@@ -75,13 +75,6 @@
   border-radius: 3px;
 }
 
-.pagination li a {
-  text-decoration: none;
-  width: 10px;
-  height: 10px;
-  padding: 10px;
-}
-
 .pagination li a:focus {
   background-color:#f5deb3;
 }

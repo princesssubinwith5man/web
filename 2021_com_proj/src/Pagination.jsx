@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 
 const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
   const pageNumbers = [];
@@ -8,8 +9,8 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
   }
 
   return (
-    <nav>
-      <ul className='pagination'>
+    <nav className='pagination'>
+      <ul>
         {pageNumbers.map(number => (
           <li key={number} className='page-item'>
             {/*링크 추가=> 페이징하면 새로고침되더라구여*/}
